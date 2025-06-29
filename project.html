@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Smart Water Pump</h1>
+      <div class="search">
+        <input type="text" id="location" placeholder="Enter your location" />
+        <button onclick="fetchTemp()">Search</button>
+      </div>
+      <div class="weather">
+        <div class="atmosphere">
+          <img src="" id="weatherImg" />
+          <div class="weather-condition">
+            <p class="condition">--</p>
+            <p class="temp">--</p>
+          </div>
+        </div>
+        <div class="place">
+          <p class="region">--</p>
+          <p class="country">--</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="toggle-wrapper">
+      <h3 class="motor-status">Motor Status</h3>
+      <div class="control-row">
+        <div class="toggle-switch" id="toggleSwitch">
+          <div class="toggle-slider"></div>
+        </div>
+        <button class="mic-btn" id="micBtn">
+          <ion-icon name="mic-outline"></ion-icon>
+        </button>
+      </div>
+      <p class="toggle-status" id="toggleStatus">OFF</p>
+    </div>
+
+    <!-- Sonar Network Gauge -->
+    <div class="network-meter">
+      <h3>Moisture Level</h3>
+      <div class="bars">
+        <div class="bar bar1"></div>
+        <div class="bar bar2"></div>
+        <div class="bar bar3"></div>
+        <div class="bar bar4"></div>
+        <div class="bar bar5"></div>
+      </div>
+      <p class="network-status" id="networkStatus">Checking...</p>
+    </div>
+
+    <!-- Radar Section -->
+    <div class="radar-container">
+      <h2>Radar</h2>
+      <canvas id="radar" width="300" height="300"></canvas>
+      <h3 id="distance">Object: Not Detected</h3>
+      <h3 id="warning" style="color: red"></h3>
+    </div>
+
+    <!-- Buzzer Section -->
+    <div class="buzzer-container">
+      <h3>Buzzer</h3>
+      <audio
+        id="buzzerSound"
+        src="incorrect-buzzer-sound-147336.mp3"
+        preload="auto"
+      ></audio>
+      <p id="buzzerStatus">Status: OFF</p>
+      <button id="stopBuzzerBtn">Turn Off Buzzer</button>
+    </div>
+
+    <!-- DHT11 Display -->
+    <div class="dht-container">
+      <div class="dht-item">
+        <p>Temperature</p>
+        <p class="dht-value" id="temperature">--°C</p>
+      </div>
+      <div class="dht-item">
+        <p>Humidity</p>
+        <p class="dht-value" id="humidity">--%</p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="radar.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

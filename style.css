@@ -1,0 +1,275 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: white;
+  background: linear-gradient(90deg, #242222, #522323);
+  max-width: 144rem;
+  margin: 0 auto;
+}
+
+.container {
+  /* margin: 0 auto; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* position: relative; */
+}
+.weather {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
+.weather-condition {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* gap: 2rem; */
+}
+.atmosphere {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+.place {
+  text-align: center;
+}
+.search {
+  width: 80%;
+  padding: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.search input {
+  width: 70%;
+  padding: 1rem 1.5rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #333;
+  border-radius: 1rem;
+}
+.search button {
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+}
+
+/* ... your existing styles ... */
+
+.motor-status {
+  margin-bottom: 0.6rem;
+}
+
+.toggle-wrapper {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.toggle-switch {
+  width: 80px;
+  height: 40px;
+  background-color: #333;
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-slider {
+  width: 32px;
+  height: 32px;
+  background-color: #ccc;
+  border-radius: 50%;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.toggle-switch.on {
+  background-color: #00ffcc;
+}
+
+.toggle-switch.on .toggle-slider {
+  transform: translateX(40px);
+  background-color: #00ff00;
+}
+
+.toggle-status {
+  margin-top: 1rem;
+  font-size: 1.6rem;
+  color: #ccc;
+}
+
+.control-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* Mic button style */
+.mic-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.mic-btn.active {
+  background-color: #ff0044;
+  border-color: #ff0044;
+}
+
+.mic-btn ion-icon {
+  color: white;
+  font-size: 1.8rem;
+}
+
+.network-meter {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #ccc;
+}
+
+.bars {
+  display: flex;
+  align-items: flex-end;
+  height: 60px;
+  gap: 6px;
+  margin: 1rem 0;
+}
+
+.bar {
+  width: 10px;
+  background-color: #555;
+  border-radius: 3px;
+  transition: height 0.3s ease, background-color 0.3s ease;
+}
+
+.bar1 {
+  height: 15%;
+}
+.bar2 {
+  height: 30%;
+}
+.bar3 {
+  height: 45%;
+}
+.bar4 {
+  height: 60%;
+}
+.bar5 {
+  height: 75%;
+}
+
+.bar.active {
+  background-color: #00ffcc;
+}
+
+/* body {
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  font-family: monospace;
+} */
+.radar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0;
+  margin-top: 4rem;
+}
+
+canvas#radar {
+  background: #111;
+  border: 2px solid #0f0;
+  border-radius: 50%;
+  margin: 1rem 0;
+}
+.buzzer-container {
+  margin-top: 3rem;
+  text-align: center;
+  color: #fff;
+}
+
+#stopBuzzerBtn {
+  padding: 1rem 2rem;
+  margin-top: 1rem;
+  background-color: #ff4444;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.6rem;
+}
+
+#stopBuzzerBtn:hover {
+  background-color: #ff0000;
+}
+
+@keyframes buzz-alert {
+  from {
+    background-color: rgba(255, 0, 0, 0.1);
+  }
+  to {
+    background-color: rgba(255, 0, 0, 0.4);
+  }
+}
+
+@media screen and (max-width: 68em) {
+  body {
+    max-width: 80rem;
+  }
+  .search {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .search input {
+    font-size: 1.4rem;
+    width: 60%;
+  }
+  .search bottom {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 37em) {
+  .weather {
+    gap: 0;
+  }
+  .weather p {
+    font-size: 1.4rem;
+    grid-template-columns: 1.5fr 1fr;
+  }
+  #weatherImg {
+    height: 4.8rem;
+    width: 4.8rem;
+  }
+}
